@@ -219,6 +219,15 @@ Controller.prototype.onErrorLoadingAds = function(adErrorEvent) {
   this.playerWrapper.onAdError(adErrorEvent);
 };
 
+/**
+ * Called when there is a wall
+ */
+Controller.prototype.onWall = function() {
+  this.adUi.onWall();
+  this.reset();
+  this.playerWrapper.onWall();
+};
+
 
 /**
  * Called by the ad UI when the play/pause button is clicked.

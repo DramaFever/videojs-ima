@@ -371,6 +371,13 @@ AdUi.prototype.onAdError = function() {
   this.adContainerDiv.style.display = 'none';
 };
 
+/**
+ * Handles when wall is shown
+ */
+AdUi.prototype.onWall = function() {
+  this.adContainerDiv.style.display = 'none';
+};
+
 
 /**
  * Handles ad break starting.

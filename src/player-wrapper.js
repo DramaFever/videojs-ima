@@ -560,6 +560,20 @@ PlayerWrapper.prototype.changeSource = function(contentSrc, playOnLoad) {
 };
 
 /**
+ * Clear the player if you need to show a wall
+ */
+PlayerWrapper.prototype.onWall = function() {
+  // Only try to pause the player when initialised with a source already
+  if (this.vjsPlayer.currentSrc()) {
+    this.vjsPlayer.reset();
+    this.vjsPlayer.pause();
+    this.vjsPlayer.currentTime(0);
+    this.vjsPlayer.hasStarted(false);
+  }
+  this.vjsControls.hide();
+};
+
+/**
  * Seeks content to 00:00:00. This is used as an event handler for the
  * loadedmetadata event, since seeking is not possible until that event has
  * fired.
